@@ -1,5 +1,5 @@
 import * as chai from "chai"
-import { Metatext } from "../src/Metatext"
+import { Metatext } from "../src/Metatext.js"
 let expect = chai.expect
 
 describe("Metatext", () => {
@@ -19,5 +19,16 @@ describe("Metatext", () => {
         metatext.setText("Hello, beautiful world")
         expect(metatext.getNumWords()).to.be.equal(3)
     })
+
+    it("should return true when guessing a word", () => {
+        expect(true).to.be.equal(false)
+
+    })
+
+    it("should return false when guessing a wrong word", () => {
+
+
+    })
 })
+
 
