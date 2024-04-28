@@ -1,5 +1,13 @@
+import fs from 'fs'
 export class TextLoader {
-    getText() {
-        return "hello";
+    text
+    load(filename) {
+        this.text = fs.readFileSync(filename)
+            .toString()
     }
+
+    getText() {
+        return this.text
+    }
+
 }
