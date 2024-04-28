@@ -31,6 +31,38 @@ Displayed --|> Word
 
 ```
 
+## Design: 
+```mermaid
+classDiagram
+
+class FillTheBlanks {
+    initialize()
+    getNumWords()
+    getMetatext()
+    guessWord(id, word)
+}
+
+class Metatext {
+    text: string[]
+    setText(text)
+    getNumWords()
+    hideWords(numHiddenWords)
+    checkWord(id, guess)
+}
+
+class TextLoader {
+    getText()
+
+}
+class UI 
+
+FillTheBlanks *--> Metatext
+UI --> FillTheBlanks
+FillTheBlanks --> TextLoader
+
+```
+
+
 ## UI prototype:
 ```
 Welcome to Mirimiri's Fill in the blanks!
