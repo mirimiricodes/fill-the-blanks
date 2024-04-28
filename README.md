@@ -6,6 +6,32 @@
 - [ ] To make a guess, the user will have to specify the ID, followed by the word.
 - [ ] Optional: The user determines what the displayed text will be. 
 
+## Domain model: 
+```mermaid
+classDiagram
+
+class FillTheBlanks
+class Text
+class Word
+class Hidden
+class Student
+class Displayed
+class Teacher
+
+FillTheBlanks *--> Game
+FillTheBlanks *--> Teacher
+Game *--> Student
+Game *--> Text
+Teacher --> Text : sets up
+Student --> Hidden : guesses
+Text *--> "1..n" Hidden
+Text *--> Displayed
+Hidden --|> Word
+Displayed --|> Word
+
+```
+
+## UI prototype:
 ```
 Welcome to Mirimiri's Fill in the blanks!
 
