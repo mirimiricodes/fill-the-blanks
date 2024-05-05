@@ -1,10 +1,20 @@
 export class Metatext {
-    text;
+    textAsArray = [];
     setText(text) {
-        this.text = text.split(" ");
+        this.textAsArray = text.split(" ");
     }
 
     getNumWords() {
-        return this.text.length;
+        return this.textAsArray.length;
+    }
+
+    checkWord(id, word) {
+        let wordAtId = this.textAsArray.at(id - 1)
+        if (wordAtId == word) {
+            return true
+        }
+        else {
+            return false
+        }
     }
 }

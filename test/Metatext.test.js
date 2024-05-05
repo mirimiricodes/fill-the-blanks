@@ -21,14 +21,23 @@ describe("Metatext", () => {
     })
 
     it("should return true when guessing a word", () => {
-        expect(true).to.be.equal(false)
-
+        let metatext = new Metatext()
+        metatext.setText("Hello, world")
+        expect(metatext.checkWord(2, "world")).to.be.equal(true)
     })
 
     it("should return false when guessing a wrong word", () => {
-
-
+        let metatext = new Metatext()
+        metatext.setText("Hello, world")
+        expect(metatext.checkWord(2, "beautiful")).to.be.equal(false)
     })
+
+    it("should return true when guessing another word", () => {
+        let metatext = new Metatext()
+        metatext.setText("Hello, world")
+        expect(metatext.checkWord(1, "hello")).to.be.equal(true)
+    })
+
 })
 
 
